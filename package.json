@@ -1,0 +1,10 @@
+{
+  "license": "MIT",
+  "scripts": {
+    "start": "rm -rf .parcel-cache && yarn parcel src/index.html"
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  },
+  "dependencies": {}
+}

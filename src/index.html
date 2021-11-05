@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Compound Interest Calculator</title>
+  </head>
+  <body>
+    <div
+      class="range-slider grad"
+      style="
+        --min: 0;
+        --max: 10000;
+        --step: 100;
+        --value: 200;
+        --text-value: '200';
+        --prefix: '$';
+        margin-top: 5rem;
+      "
+    >
+      <input
+        name="initialValue"
+        type="range"
+        min="0"
+        max="10000"
+        step="100"
+        value="200"
+        oninput="getVal()"
+      />
+      <!-- oninput="this.parentNode.style.setProperty('--value',this.value); this.parentNode.style.setProperty('--text-value', JSON.stringify((+this.value).toLocaleString()))" -->
+      <output></output>
+      <div class="range-slider__progress"></div>
+    </div>
+
+    <div class="radio-options">
+      <input
+        class="checkbox-budget"
+        type="radio"
+        name="budget"
+        id="budget-1"
+        checked
+      />
+      <label class="for-checkbox-budget" for="budget-1">
+        <span data-hover="500$">500$</span>
+      </label>
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-2" />
+      <label class="for-checkbox-budget" for="budget-2">
+        <span data-hover="1000$">1000$</span>
+      </label>
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-3" />
+      <label class="for-checkbox-budget" for="budget-3">
+        <span data-hover="1500$">1500$</span>
+      </label>
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-4" />
+      <label class="for-checkbox-budget" for="budget-4">
+        <span data-hover="2000$">2000$</span>
+      </label>
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-5" />
+      <label class="for-checkbox-budget" for="budget-5">
+        <span data-hover="2500$">2500$</span>
+      </label>
+      <input class="checkbox-budget" type="radio" name="budget" id="budget-6" />
+      <label class="for-checkbox-budget" for="budget-6">
+        <span data-hover="5000$">5000$</span>
+      </label>
+    </div>
+    <div>
+      <canvas id="myChart" width="700" height="400"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
